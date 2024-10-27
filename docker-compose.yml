@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17  # Choose the PostgreSQL version you need
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: demo
+    ports:
+      - "5432:5432"  # Maps container port to local port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist data
+
+volumes:
+  postgres_data:   # Named volume for data persistence
