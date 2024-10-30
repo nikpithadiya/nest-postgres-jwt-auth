@@ -23,6 +23,7 @@ model User {
   created_at       DateTime?       @default(now())
   is_active Boolean @default(true) 
   deleted_at DateTime?
-   
+  password String  
+
   @@map("users")
 }
